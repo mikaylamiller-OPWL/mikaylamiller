@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Mikayla Miller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#F5F0E8;--cream-deep:#EDE5D4;--cream-border:#D6CCB8;--sage:#7A8C6E;--sage-light:#E4EBD8;--sage-dark:#2E3A22;--sage-mid:#AABF94;--mauve:#9E8E96;--mauve-light:#EDE4E8;--mauve-dark:#6B4A5A;--mauve-border:#C4A8B4;--forest:#2E3127;--bark:#3E3830;--stone:#6B6355;--fog:#A89E92;--white:#FDFAF6;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--bark);line-height:1.7;}
+  nav{background:var(--forest);padding:0 3rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+  .nav-name{font-family:'Lora',serif;font-size:16px;color:#E8E2D9;letter-spacing:0.02em;text-decoration:none;}
+  .nav-links{display:flex;gap:2rem;}
+  .nav-links a{font-size:13px;color:#8A9080;text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:#C4B5BC;}
+  .rule{border:none;border-top:0.5px solid var(--cream-border);}
+  .main{max-width:680px;margin:0 auto;padding:5rem 3rem 4rem;}
+  .eyebrow{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;}
+  .page-title{font-family:'Lora',serif;font-size:38px;font-weight:400;color:var(--forest);line-height:1.15;margin-bottom:1rem;}
+  .page-title span{color:var(--mauve);font-style:italic;}
+  .page-intro{font-size:15px;color:var(--stone);line-height:1.85;font-weight:300;margin-bottom:3rem;}
+  .contact-cards{display:flex;flex-direction:column;gap:14px;margin-bottom:3rem;}
+  .contact-card{background:var(--white);border:0.5px solid var(--cream-border);border-radius:10px;padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;transition:border-color 0.2s;}
+  .contact-card:hover{border-color:var(--mauve-border);}
+  .cc-left{display:flex;align-items:center;gap:14px;}
+  .cc-icon{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
+  .icon-linkedin{background:var(--sage-light);color:var(--sage);}
+  .icon-email{background:var(--mauve-light);color:var(--mauve);}
+  .cc-label{font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--fog);margin-bottom:3px;}
+  .cc-value{font-size:14px;font-weight:500;color:var(--forest);}
+  .cc-link{font-size:13px;color:var(--mauve-dark);text-decoration:none;display:flex;align-items:center;gap:4px;flex-shrink:0;}
+  .cc-link:hover{color:var(--mauve);}
+  .availability-strip{background:var(--sage-light);border:0.5px solid var(--sage-mid);border-radius:8px;padding:1.25rem 1.5rem;margin-bottom:3rem;}
+  .as-title{font-size:13px;font-weight:500;color:var(--sage-dark);margin-bottom:6px;}
+  .as-body{font-size:13px;color:#4A5E3A;line-height:1.75;font-weight:300;}
+  .currently-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:3rem;}
+  .curr-card{background:var(--white);border:0.5px solid var(--cream-border);border-radius:8px;padding:1rem 1.1rem;}
+  .curr-label{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--fog);margin-bottom:6px;}
+  .curr-value{font-size:13px;color:var(--forest);line-height:1.55;}
+  .sign-off{font-family:'Lora',serif;font-size:18px;font-style:italic;color:var(--mauve-dark);text-align:center;padding:2rem 0;border-top:0.5px solid var(--cream-border);}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-name">Mikayla Miller</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="daf.html">DAF work</a>
+    <a href="training.html">Training & onboarding</a>
+    <a href="academic.html">Academic work</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+</nav>
+
+<main class="main">
+  <p class="eyebrow">Contact</p>
+  <h1 class="page-title">Let's talk<br><span>systems.</span></h1>
+  <p class="page-intro">Whether you're an employer, a classmate, a professor, or someone who's also frustrated by organizational chaos — I'm always open to a good conversation about performance, people, and process.</p>
+
+  <div class="contact-cards">
+    <div class="contact-card">
+      <div class="cc-left">
+        <div class="cc-icon icon-linkedin"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></div>
+        <div>
+          <div class="cc-label">LinkedIn</div>
+          <div class="cc-value">Mikayla Miller</div>
+        </div>
+      </div>
+      <a href="https://linkedin.com/in/mikayla-miller" class="cc-link" target="_blank">Connect <i class="ti ti-external-link" aria-hidden="true"></i></a>
+    </div>
+    <div class="contact-card">
+      <div class="cc-left">
+        <div class="cc-icon icon-email"><i class="ti ti-mail" aria-hidden="true"></i></div>
+        <div>
+          <div class="cc-label">Email</div>
+          <div class="cc-value">[your.email@domain.com]</div>
+        </div>
+      </div>
+      <a href="mailto:your.email@domain.com" class="cc-link">Email me <i class="ti ti-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+
+  <div class="availability-strip">
+    <div class="as-title">What I'm open to</div>
+    <div class="as-body">Conversations about HR operations, training design, organizational performance, and the MS in OPWL. Networking with people working in OD, L&D, HR generalist roles, and instructional design. Collaboration on projects that need someone who can organize the chaos and build systems that last.</div>
+  </div>
+
+  <div class="currently-grid">
+    <div class="curr-card">
+      <div class="curr-label">Currently</div>
+      <div class="curr-value">HR Assistant at DAF, transitioning to HR Generalist. MS in OPWL — first semester.</div>
+    </div>
+    <div class="curr-card">
+      <div class="curr-label">Based in</div>
+      <div class="curr-value">Boise, Idaho. Open to remote and hybrid roles.</div>
+    </div>
+    <div class="curr-card">
+      <div class="curr-label">Heading toward</div>
+      <div class="curr-value">HR Generalist → performance improvement specialist → organizational development.</div>
+    </div>
+    <div class="curr-card">
+      <div class="curr-label">Response time</div>
+      <div class="curr-value">Usually within a day or two. LinkedIn is fastest.</div>
+    </div>
+  </div>
+
+  <div class="sign-off">"The best systems are the ones people don't have to fight."</div>
+</main>
+</body>
+</html>

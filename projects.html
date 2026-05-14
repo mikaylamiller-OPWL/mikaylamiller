@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Mikayla Miller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:#F5F0E8;--cream-deep:#EDE5D4;--cream-border:#D6CCB8;
+    --sage:#7A8C6E;--sage-light:#E4EBD8;--sage-dark:#2E3A22;--sage-mid:#AABF94;
+    --mauve:#9E8E96;--mauve-light:#EDE4E8;--mauve-dark:#6B4A5A;--mauve-border:#C4A8B4;
+    --forest:#2E3127;--bark:#3E3830;--stone:#6B6355;--fog:#A89E92;--white:#FDFAF6;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--bark);line-height:1.7;}
+  nav{background:var(--forest);padding:0 3rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+  .nav-name{font-family:'Lora',serif;font-size:16px;color:#E8E2D9;letter-spacing:0.02em;text-decoration:none;}
+  .nav-links{display:flex;gap:2rem;}
+  .nav-links a{font-size:13px;color:#8A9080;text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover{color:#C4B5BC;}
+  .nav-links a.active{color:#C4B5BC;}
+  .page-hero{background:var(--cream);padding:4rem 3rem 3rem;max-width:960px;margin:0 auto;}
+  .eyebrow{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;}
+  .page-title{font-family:'Lora',serif;font-size:38px;font-weight:400;color:var(--forest);line-height:1.15;margin-bottom:1rem;}
+  .page-title span{color:var(--mauve);font-style:italic;}
+  .page-intro{font-size:15px;color:var(--stone);line-height:1.85;max-width:580px;font-weight:300;}
+  .rule{border:none;border-top:0.5px solid var(--cream-border);}
+  .main{max-width:960px;margin:0 auto;padding:3rem;}
+  .project-block{margin-bottom:4rem;}
+  .project-header{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem;margin-bottom:1.5rem;}
+  .project-meta{}
+  .project-tag{font-size:10px;padding:3px 10px;border-radius:10px;display:inline-block;margin-bottom:10px;}
+  .tag-mauve{background:var(--mauve-light);color:var(--mauve-dark);border:0.5px solid var(--mauve-border);}
+  .tag-sage{background:var(--sage-light);color:var(--sage-dark);border:0.5px solid var(--sage-mid);}
+  .tag-cream{background:var(--cream-deep);color:#5A4A36;border:0.5px solid var(--cream-border);}
+  .project-title{font-family:'Lora',serif;font-size:24px;font-weight:400;color:var(--forest);line-height:1.25;margin-bottom:8px;}
+  .project-org{font-size:13px;color:var(--mauve-dark);}
+  .project-status{font-size:11px;padding:4px 12px;border-radius:20px;background:var(--cream-deep);color:var(--stone);border:0.5px solid var(--cream-border);white-space:nowrap;align-self:flex-start;margin-top:4px;}
+  .two-col{display:grid;grid-template-columns:3fr 2fr;gap:2.5rem;align-items:start;}
+  .body-text{font-size:14px;color:var(--stone);line-height:1.9;font-weight:300;}
+  .body-text em{color:var(--sage-dark);font-style:normal;font-weight:500;}
+  .body-text+.body-text{margin-top:1rem;}
+  .section-label{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--fog);margin-bottom:8px;margin-top:1.25rem;}
+  .detail-list{display:flex;flex-direction:column;gap:6px;}
+  .detail-item{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--stone);line-height:1.55;}
+  .detail-dot{width:5px;height:5px;border-radius:50%;background:var(--sage-mid);flex-shrink:0;margin-top:7px;}
+  .outcomes-box{background:var(--sage-light);border:0.5px solid var(--sage-mid);border-radius:8px;padding:1.1rem 1.25rem;}
+  .outcomes-box .ob-label{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--sage);margin-bottom:8px;}
+  .outcome-row{display:flex;gap:8px;align-items:flex-start;margin-bottom:6px;font-size:12px;color:var(--sage-dark);line-height:1.5;}
+  .outcome-row i{font-size:13px;color:var(--sage);flex-shrink:0;margin-top:1px;}
+  .tools-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.75rem;}
+  .tool-pill{font-size:11px;padding:3px 9px;border-radius:20px;background:var(--white);border:0.5px solid var(--cream-border);color:var(--stone);}
+  .placeholder-notice{background:var(--mauve-light);border:0.5px dashed var(--mauve-border);border-radius:6px;padding:8px 14px;font-size:11px;color:var(--mauve-dark);margin-bottom:1rem;display:flex;gap:6px;align-items:center;}
+  .closing-band{background:var(--forest);padding:3rem;text-align:center;margin-top:2rem;}
+  .closing-band h2{font-family:'Lora',serif;font-size:22px;font-weight:400;color:#E8E2D9;margin-bottom:0.75rem;line-height:1.4;}
+  .closing-band p{font-size:14px;color:#8A9080;font-weight:300;max-width:480px;margin:0 auto 1.75rem;line-height:1.75;}
+  .closing-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .closing-links a{font-size:13px;color:#C4B5BC;text-decoration:none;border:0.5px solid #4A5244;padding:9px 20px;border-radius:4px;transition:all 0.2s;}
+  .closing-links a:hover{border-color:#C4B5BC;color:#E8E2D9;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-name">Mikayla Miller</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="daf.html">DAF work</a>
+    <a href="training.html">Training & onboarding</a>
+    <a href="academic.html">Academic work</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="eyebrow">Projects</p>
+  <h1 class="page-title">Real work.<br><span>Real results.</span></h1>
+  <p class="page-intro">These aren't class projects or theoretical exercises. Every case study here came from an actual organization, a real problem, and a deadline that mattered.</p>
+</div>
+<hr class="rule">
+
+<main class="main">
+
+  <div class="project-block">
+    <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Replace the bracketed text with your real project details</div>
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-tag tag-mauve">HR operations</span>
+        <h2 class="project-title">Onboarding Workflow Redesign</h2>
+        <div class="project-org">[Organization name] · [Year]</div>
+      </div>
+      <span class="project-status">Completed</span>
+    </div>
+    <div class="two-col">
+      <div>
+        <p class="section-label">The problem</p>
+        <p class="body-text">[Describe what was broken. What were new employees experiencing? What did the old process look like — or fail to look like? What prompted the redesign?]</p>
+        <p class="section-label">What I did</p>
+        <p class="body-text">Redesigned the end-to-end employee onboarding process using BambooHR — building structured workflows, automating key touchpoints, and creating documentation that gave new hires clarity from day one. <em>[Add your specific actions here — what systems you built, what you replaced, who you worked with.]</em></p>
+        <p class="body-text">[Add a second paragraph if needed — any stakeholder coordination, timeline, constraints you worked within.]</p>
+        <p class="section-label">Tools & methods</p>
+        <div class="tools-row">
+          <span class="tool-pill">BambooHR</span>
+          <span class="tool-pill">Process mapping</span>
+          <span class="tool-pill">SOP development</span>
+          <span class="tool-pill">[Add tools]</span>
+        </div>
+      </div>
+      <div>
+        <div class="outcomes-box">
+          <div class="ob-label">Outcomes</div>
+          <div class="outcome-row"><i class="ti ti-check" aria-hidden="true"></i><span>[Outcome 1 — e.g. reduced onboarding time by X days]</span></div>
+          <div class="outcome-row"><i class="ti ti-check" aria-hidden="true"></i><span>[Outcome 2 — e.g. increased completion rate for onboarding tasks]</span></div>
+          <div class="outcome-row"><i class="ti ti-check" aria-hidden="true"></i><span>[Outcome 3 — e.g. positive new hire feedback]</span></div>
+          <div class="outcome-row"><i class="ti ti-check" aria-hidden="true"></i><span>[Outcome 4 — anything measurable or observable]</span></div>
+        </div>
+        <p class="section-label">Key deliverables</p>
+        <div class="detail-list">
+          <div class="detail-item"><span class="detail-dot"></span><span>[Deliverable 1 — e.g. BambooHR workflow templates]</span></div>
+          <div class="detail-item"><span class="detail-dot"></span><span>[Deliverable 2 — e.g. onboarding checklist for managers]</span></div>
+          <div class="detail-item"><span class="detail-dot"></span><span>[Deliverable 3]</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin:1rem 0 3rem;">
+
+  <div class="project-block">
+    <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Replace the bracketed text with your real project details</div>
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-tag tag-sage">Systems design</span>
+        <h2 class="project-title">Advising Hub Development</h2>
+        <div class="project-org">[Organization name] · [Year]</div>
+      </div>
+      <span class="project-status">Completed</span>
+    </div>
+    <div class="two-col">
+      <div>
+        <p class="section-label">The problem</p>
+        <p class="body-text">[What was the state of advising resources before? Were things scattered across multiple platforms, hard to find, inconsistent? What were advisors or students struggling with?]</p>
+        <p class="section-label">What I did</p>
+        <p class="body-text">Designed and built a centralized advising hub that consolidated scattered resources into a single navigable system — <em>[describe the platform or tool you used, what you built, who it served].</em></p>
+        <p class="body-text">[Add any additional context — content you organized, stakeholders you worked with, decisions you made about structure or access.]</p>
+        <p class="section-label">Tools & methods</p>
+        <div class="tools-row">
+          <span class="tool-pill">Information architecture</span>
+          <span class="tool-pill">Content strategy</span>
+          <span class="tool-pill">[Platform used]</span>
+          <span class="tool-pill">[Add tools]</span>
+        </div>
+      </div>
+      <div>
+        <div class="outcomes-box">
+          <div class="ob-label">Outcomes</div>
+          <div class="outcome-row"><i class="ti ti-check" aria-hidden="true"></i><span>[Outcome 1]</span></div>
+          <div class="outcome-row"><i class="ti ti-check" aria-hidden="true"></i><span>[Outcome 2]</span></div>
+          <div class="outcome-row"><i class="ti ti-check" aria-hidden="true"></i><span>[Outcome 3]</span></div>
+        </div>
+        <p class="section-label">Key deliverables</p>
+        <div class="detail-list">
+          <div class="detail-item"><span class="detail-dot"></span><span>[Deliverable 1]</span></div>
+          <div class="detail-item"><span class="detail-dot"></span><span>[Deliverable 2]</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin:1rem 0 3rem;">
+
+  <div class="project-block">
+    <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Replace the bracketed text with your real project details</div>
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-tag tag-sage">Training design</span>
+        <h2 class="project-title">Orientation Program Redesign</h2>
+        <div class="project-org">[Organization name] · [Year]</div>
+      </div>
+      <span class="project-status">Completed</span>
+    </div>
+    <div class="two-col">
+      <div>
+        <p class="section-label">The problem</p>
+        <p class="body-text">[What was wrong with the existing orientation? Too long, too confusing, too generic? What feedback existed? What prompted the change?]</p>
+        <p class="section-label">What I did</p>
+        <p class="body-text">Restructured the orientation program from the ground up — <em>[describe your approach: did you audit the existing content, interview participants, redesign the flow, create new materials?]</em></p>
+        <p class="section-label">Tools & methods</p>
+        <div class="tools-row">
+          <span class="tool-pill">Curriculum design</span>
+          <span class="tool-pill">Facilitation</span>
+          <span class="tool-pill">[Add tools]</span>
+        </div>
+      </div>
+      <div>
+        <div class="outcomes-box">
+          <div class="ob-label">Outcomes</div>
+          <div class="outcome-row"><i class="ti ti-check" aria-hidden="true"></i><span>[Outcome 1]</span></div>
+          <div class="outcome-row"><i class="ti ti-check" aria-hidden="true"></i><span>[Outcome 2]</span></div>
+          <div class="outcome-row"><i class="ti ti-check" aria-hidden="true"></i><span>[Outcome 3]</span></div>
+        </div>
+        <p class="section-label">Key deliverables</p>
+        <div class="detail-list">
+          <div class="detail-item"><span class="detail-dot"></span><span>[Deliverable 1]</span></div>
+          <div class="detail-item"><span class="detail-dot"></span><span>[Deliverable 2]</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin:1rem 0 3rem;">
+
+  <div class="project-block">
+    <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Replace the bracketed text with your real project details</div>
+    <div class="project-header">
+      <div class="project-meta">
+        <span class="project-tag tag-cream">Process improvement</span>
+        <h2 class="project-title">Process Documentation & SOPs</h2>
+        <div class="project-org">[Organization name] · [Year]</div>
+      </div>
+      <span class="project-status">Completed</span>
+    </div>
+    <div class="two-col">
+      <div>
+        <p class="section-label">The problem</p>
+        <p class="body-text">[What processes were undocumented or inconsistent? What happened when someone left a role or was out? What was the cost of not having clear documentation?]</p>
+        <p class="section-label">What I did</p>
+        <p class="body-text">Built a suite of process documentation and SOPs covering <em>[describe the processes — hiring workflows, communication systems, interview coordination, etc.]</em> — designed to be used by anyone in the role, not just the person who created them.</p>
+        <p class="section-label">Tools & methods</p>
+        <div class="tools-row">
+          <span class="tool-pill">SOP writing</span>
+          <span class="tool-pill">Process mapping</span>
+          <span class="tool-pill">Workflow design</span>
+          <span class="tool-pill">[Add tools]</span>
+        </div>
+      </div>
+      <div>
+        <div class="outcomes-box">
+          <div class="ob-label">Outcomes</div>
+          <div class="outcome-row"><i class="ti ti-check" aria-hidden="true"></i><span>[Outcome 1]</span></div>
+          <div class="outcome-row"><i class="ti ti-check" aria-hidden="true"></i><span>[Outcome 2]</span></div>
+          <div class="outcome-row"><i class="ti ti-check" aria-hidden="true"></i><span>[Outcome 3]</span></div>
+        </div>
+        <p class="section-label">Key deliverables</p>
+        <div class="detail-list">
+          <div class="detail-item"><span class="detail-dot"></span><span>[Deliverable 1]</span></div>
+          <div class="detail-item"><span class="detail-dot"></span><span>[Deliverable 2]</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="closing-band">
+  <h2>More projects are added as they're completed.</h2>
+  <p>This portfolio grows alongside the MS in OPWL program and my work at DAF.</p>
+  <div class="closing-links">
+    <a href="daf.html">See DAF work</a>
+    <a href="contact.html">Get in touch</a>
+  </div>
+</div>
+</body>
+</html>

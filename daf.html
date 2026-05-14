@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAF Work — Mikayla Miller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#F5F0E8;--cream-deep:#EDE5D4;--cream-border:#D6CCB8;--sage:#7A8C6E;--sage-light:#E4EBD8;--sage-dark:#2E3A22;--sage-mid:#AABF94;--mauve:#9E8E96;--mauve-light:#EDE4E8;--mauve-dark:#6B4A5A;--mauve-border:#C4A8B4;--forest:#2E3127;--bark:#3E3830;--stone:#6B6355;--fog:#A89E92;--white:#FDFAF6;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--bark);line-height:1.7;}
+  nav{background:var(--forest);padding:0 3rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+  .nav-name{font-family:'Lora',serif;font-size:16px;color:#E8E2D9;letter-spacing:0.02em;text-decoration:none;}
+  .nav-links{display:flex;gap:2rem;}
+  .nav-links a{font-size:13px;color:#8A9080;text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:#C4B5BC;}
+  .page-hero{background:var(--cream);padding:4rem 3rem 3rem;max-width:960px;margin:0 auto;}
+  .eyebrow{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;}
+  .page-title{font-family:'Lora',serif;font-size:38px;font-weight:400;color:var(--forest);line-height:1.15;margin-bottom:1rem;}
+  .page-title span{color:var(--mauve);font-style:italic;}
+  .page-intro{font-size:15px;color:var(--stone);line-height:1.85;max-width:580px;font-weight:300;}
+  .rule{border:none;border-top:0.5px solid var(--cream-border);}
+  .main{max-width:960px;margin:0 auto;padding:3rem;}
+  .context-strip{background:var(--sage-light);border:0.5px solid var(--sage-mid);border-radius:8px;padding:1.25rem 1.5rem;margin-bottom:3rem;display:flex;gap:1rem;align-items:flex-start;}
+  .context-strip i{font-size:20px;color:var(--sage);flex-shrink:0;margin-top:2px;}
+  .cs-title{font-size:13px;font-weight:500;color:var(--sage-dark);margin-bottom:4px;}
+  .cs-body{font-size:13px;color:#4A5E3A;line-height:1.75;font-weight:300;}
+  .sect-gap{margin-bottom:3.5rem;}
+  .sect-eyebrow{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
+  .sect-heading{font-family:'Lora',serif;font-size:22px;font-weight:400;color:var(--forest);margin-bottom:1rem;line-height:1.3;}
+  .body-text{font-size:14px;color:var(--stone);line-height:1.9;font-weight:300;}
+  .body-text em{color:var(--sage-dark);font-style:normal;font-weight:500;}
+  .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:1.25rem;}
+  .work-card{background:var(--white);border:0.5px solid var(--cream-border);border-radius:10px;padding:1.25rem;transition:border-color 0.2s;}
+  .work-card:hover{border-color:var(--sage-mid);}
+  .wc-icon{font-size:22px;color:var(--sage);margin-bottom:10px;}
+  .wc-tag{font-size:10px;padding:2px 8px;border-radius:10px;background:var(--sage-light);color:var(--sage-dark);border:0.5px solid var(--sage-mid);display:inline-block;margin-bottom:8px;}
+  .wc-title{font-size:14px;font-weight:500;color:var(--forest);margin-bottom:6px;line-height:1.35;}
+  .wc-body{font-size:12px;color:var(--stone);line-height:1.65;}
+  .placeholder-notice{background:var(--mauve-light);border:0.5px dashed var(--mauve-border);border-radius:6px;padding:8px 14px;font-size:11px;color:var(--mauve-dark);margin-top:10px;display:flex;gap:6px;align-items:center;}
+  .bridge-box{background:var(--cream-deep);border:0.5px solid var(--cream-border);border-radius:8px;padding:1.5rem;margin-top:3rem;}
+  .bb-title{font-family:'Lora',serif;font-size:18px;font-weight:400;color:var(--forest);margin-bottom:0.75rem;}
+  .bb-body{font-size:14px;color:var(--stone);line-height:1.85;font-weight:300;}
+  .bb-body em{color:var(--sage-dark);font-style:normal;font-weight:500;}
+  .closing-band{background:var(--forest);padding:3rem;text-align:center;margin-top:4rem;}
+  .closing-band h2{font-family:'Lora',serif;font-size:22px;font-weight:400;color:#E8E2D9;margin-bottom:0.75rem;line-height:1.4;}
+  .closing-band p{font-size:14px;color:#8A9080;font-weight:300;max-width:480px;margin:0 auto 1.75rem;line-height:1.75;}
+  .closing-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .closing-links a{font-size:13px;color:#C4B5BC;text-decoration:none;border:0.5px solid #4A5244;padding:9px 20px;border-radius:4px;transition:all 0.2s;}
+  .closing-links a:hover{border-color:#C4B5BC;color:#E8E2D9;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-name">Mikayla Miller</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="daf.html" class="active">DAF work</a>
+    <a href="training.html">Training & onboarding</a>
+    <a href="academic.html">Academic work</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="eyebrow">DAF work</p>
+  <h1 class="page-title">Data systems,<br><span>human-centered.</span></h1>
+  <p class="page-intro">My current role at DAF sits at the intersection of data operations and organizational performance. This is what that looks like in practice.</p>
+</div>
+<hr class="rule">
+
+<main class="main">
+
+  <div class="context-strip">
+    <i class="ti ti-info-circle" aria-hidden="true"></i>
+    <div>
+      <div class="cs-title">Why data work belongs in an OPWL portfolio</div>
+      <div class="cs-body">Organizational performance and data systems share the same core problem: information that should flow clearly gets stuck, distorted, or lost. Whether I'm designing an onboarding workflow or documenting an airflow pipeline, the instinct is identical — understand the system, find the friction, remove it. This section shows that instinct applied to a data environment.</div>
+    </div>
+  </div>
+
+  <div class="sect-gap">
+    <p class="sect-eyebrow">Dashboards & visualization</p>
+    <h2 class="sect-heading">Making data communicate, not just display</h2>
+    <p class="body-text">A dashboard that requires explanation has already failed. The work here is about designing data displays that give the right person the right information without requiring them to already know what they're looking for. <em>Clarity is a design decision, not a data one.</em></p>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="wc-icon"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
+        <span class="wc-tag">Dashboard</span>
+        <div class="wc-title">[Dashboard project name]</div>
+        <div class="wc-body">[Describe what this dashboard tracks, who uses it, and what decision it supports. What did it replace or improve?]</div>
+        <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Replace with your real project</div>
+      </div>
+      <div class="work-card">
+        <div class="wc-icon"><i class="ti ti-chart-line" aria-hidden="true"></i></div>
+        <span class="wc-tag">Visualization</span>
+        <div class="wc-title">[Visualization project name]</div>
+        <div class="wc-body">[Describe the data story this visualization tells. What was the audience? What insight did it surface that wasn't visible before?]</div>
+        <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Replace with your real project</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin-bottom:3rem;">
+
+  <div class="sect-gap">
+    <p class="sect-eyebrow">Workflow & pipeline documentation</p>
+    <h2 class="sect-heading">Pipelines documented for humans, not just machines</h2>
+    <p class="body-text">Data pipelines break for the same reason employee onboarding breaks: nobody wrote down how it works in a way that a new person could actually follow. Good pipeline documentation isn't just technical accuracy — it's communication design. <em>Who needs to understand this, and what do they need to know?</em></p>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="wc-icon"><i class="ti ti-git-branch" aria-hidden="true"></i></div>
+        <span class="wc-tag">Pipeline documentation</span>
+        <div class="wc-title">[Pipeline documentation project]</div>
+        <div class="wc-body">[Describe the pipeline, what it does, who depends on it, and what the documentation covers. Was this for technical or non-technical audiences?]</div>
+        <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Replace with your real project</div>
+      </div>
+      <div class="work-card">
+        <div class="wc-icon"><i class="ti ti-sitemap" aria-hidden="true"></i></div>
+        <span class="wc-tag">Workflow mapping</span>
+        <div class="wc-title">[Workflow mapping project]</div>
+        <div class="wc-body">[Describe a workflow you mapped or documented — what was unclear before, what you clarified, and how it's used now.]</div>
+        <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Replace with your real project</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin-bottom:3rem;">
+
+  <div class="sect-gap">
+    <p class="sect-eyebrow">Process improvement</p>
+    <h2 class="sect-heading">Finding friction. Removing it systematically.</h2>
+    <p class="body-text">Process improvement in a data environment looks different from HR — but it's driven by the same question: <em>where is the system creating unnecessary difficulty for the people using it?</em> These projects show that applied to operational data workflows.</p>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="wc-icon"><i class="ti ti-settings-2" aria-hidden="true"></i></div>
+        <span class="wc-tag">Process improvement</span>
+        <div class="wc-title">[Process improvement project]</div>
+        <div class="wc-body">[What process was inefficient or broken? What did you change, and what was the result?]</div>
+        <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Replace with your real project</div>
+      </div>
+      <div class="work-card">
+        <div class="wc-icon"><i class="ti ti-refresh" aria-hidden="true"></i></div>
+        <span class="wc-tag">Operational improvement</span>
+        <div class="wc-title">[Operational improvement project]</div>
+        <div class="wc-body">[Describe a recurring problem you solved structurally — not just fixed once, but made harder to break in the future.]</div>
+        <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Replace with your real project</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bridge-box">
+    <h3 class="bb-title">The throughline</h3>
+    <p class="bb-body">Every project on this page — whether it's a dashboard, a pipeline doc, or a process fix — is driven by the same thing that drives my HR and training work: <em>systems should serve the people using them, not the other way around.</em> The vocabulary is different. The instinct is identical.</p>
+  </div>
+
+</main>
+
+<div class="closing-band">
+  <h2>This section grows as projects are completed.</h2>
+  <p>DAF work is ongoing — check back as new projects are added.</p>
+  <div class="closing-links">
+    <a href="projects.html">See HR projects</a>
+    <a href="contact.html">Get in touch</a>
+  </div>
+</div>
+</body>
+</html>

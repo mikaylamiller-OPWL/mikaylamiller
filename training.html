@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Training & Onboarding — Mikayla Miller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#F5F0E8;--cream-deep:#EDE5D4;--cream-border:#D6CCB8;--sage:#7A8C6E;--sage-light:#E4EBD8;--sage-dark:#2E3A22;--sage-mid:#AABF94;--mauve:#9E8E96;--mauve-light:#EDE4E8;--mauve-dark:#6B4A5A;--mauve-border:#C4A8B4;--forest:#2E3127;--bark:#3E3830;--stone:#6B6355;--fog:#A89E92;--white:#FDFAF6;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--bark);line-height:1.7;}
+  nav{background:var(--forest);padding:0 3rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+  .nav-name{font-family:'Lora',serif;font-size:16px;color:#E8E2D9;letter-spacing:0.02em;text-decoration:none;}
+  .nav-links{display:flex;gap:2rem;}
+  .nav-links a{font-size:13px;color:#8A9080;text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:#C4B5BC;}
+  .page-hero{background:var(--cream);padding:4rem 3rem 3rem;max-width:960px;margin:0 auto;}
+  .eyebrow{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;}
+  .page-title{font-family:'Lora',serif;font-size:38px;font-weight:400;color:var(--forest);line-height:1.15;margin-bottom:1rem;}
+  .page-title span{color:var(--mauve);font-style:italic;}
+  .page-intro{font-size:15px;color:var(--stone);line-height:1.85;max-width:580px;font-weight:300;}
+  .rule{border:none;border-top:0.5px solid var(--cream-border);}
+  .main{max-width:960px;margin:0 auto;padding:3rem;}
+  .sect-gap{margin-bottom:3.5rem;}
+  .sect-eyebrow{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
+  .sect-heading{font-family:'Lora',serif;font-size:22px;font-weight:400;color:var(--forest);margin-bottom:1rem;line-height:1.3;}
+  .body-text{font-size:14px;color:var(--stone);line-height:1.9;font-weight:300;}
+  .body-text em{color:var(--sage-dark);font-style:normal;font-weight:500;}
+  .two-col{display:grid;grid-template-columns:3fr 2fr;gap:2.5rem;align-items:start;}
+  .philosophy-cards{display:flex;flex-direction:column;gap:10px;}
+  .phil-card{background:var(--white);border:0.5px solid var(--cream-border);border-radius:8px;padding:1rem 1.1rem;border-left:2px solid var(--mauve-border);border-radius:0 8px 8px 0;}
+  .phil-title{font-size:13px;font-weight:500;color:var(--forest);margin-bottom:3px;}
+  .phil-body{font-size:12px;color:var(--stone);line-height:1.6;}
+  .material-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:1.25rem;}
+  .mat-card{background:var(--white);border:0.5px solid var(--cream-border);border-radius:10px;padding:1.1rem;}
+  .mat-icon{font-size:20px;color:var(--sage);margin-bottom:8px;}
+  .mat-tag{font-size:10px;background:var(--sage-light);color:var(--sage-dark);border:0.5px solid var(--sage-mid);padding:2px 8px;border-radius:10px;display:inline-block;margin-bottom:6px;}
+  .mat-title{font-size:13px;font-weight:500;color:var(--forest);margin-bottom:4px;line-height:1.35;}
+  .mat-body{font-size:11px;color:var(--stone);line-height:1.6;}
+  .placeholder-notice{background:var(--mauve-light);border:0.5px dashed var(--mauve-border);border-radius:6px;padding:6px 12px;font-size:11px;color:var(--mauve-dark);margin-top:8px;display:flex;gap:5px;align-items:center;}
+  .principles-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.25rem;}
+  .principle{background:var(--sage-light);border-radius:8px;padding:1rem 1.1rem;border:0.5px solid var(--sage-mid);}
+  .pr-num{font-family:'Lora',serif;font-size:22px;color:var(--sage-mid);margin-bottom:4px;}
+  .pr-title{font-size:13px;font-weight:500;color:var(--sage-dark);margin-bottom:4px;}
+  .pr-body{font-size:12px;color:#4A5E3A;line-height:1.6;}
+  .closing-band{background:var(--forest);padding:3rem;text-align:center;margin-top:4rem;}
+  .closing-band h2{font-family:'Lora',serif;font-size:22px;font-weight:400;color:#E8E2D9;margin-bottom:0.75rem;line-height:1.4;}
+  .closing-band p{font-size:14px;color:#8A9080;font-weight:300;max-width:480px;margin:0 auto 1.75rem;line-height:1.75;}
+  .closing-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .closing-links a{font-size:13px;color:#C4B5BC;text-decoration:none;border:0.5px solid #4A5244;padding:9px 20px;border-radius:4px;transition:all 0.2s;}
+  .closing-links a:hover{border-color:#C4B5BC;color:#E8E2D9;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-name">Mikayla Miller</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="daf.html">DAF work</a>
+    <a href="training.html" class="active">Training & onboarding</a>
+    <a href="academic.html">Academic work</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="eyebrow">Training & onboarding</p>
+  <h1 class="page-title">Good training makes<br>things <span>click.</span></h1>
+  <p class="page-intro">Training isn't about transferring information. It's about building the conditions where people can actually use what they've learned. Here's how I think about that — and what I've built.</p>
+</div>
+<hr class="rule">
+
+<main class="main">
+
+  <div class="sect-gap">
+    <div class="two-col">
+      <div>
+        <p class="sect-eyebrow">My approach</p>
+        <h2 class="sect-heading">Training that respects the person in the seat</h2>
+        <p class="body-text">Most bad training has the same problem: it was designed for the organization's comfort, not the learner's reality. It assumes people have time, attention, and context they often don't have. It front-loads policy and buries the practical. It measures completion, not comprehension.</p>
+        <p class="body-text">I design training and onboarding around a different set of questions: <em>What does this person actually need to do their job? What's the smallest amount of information that makes the biggest difference? What happens when they're confused at 3pm on a Tuesday with no one to ask?</em></p>
+        <p class="body-text">The answers to those questions produce training that's shorter, clearer, and more useful than most organizations default to — and onboarding experiences that make people feel prepared instead of overwhelmed.</p>
+      </div>
+      <div class="philosophy-cards">
+        <div class="phil-card">
+          <div class="phil-title">Start with the job, not the content</div>
+          <div class="phil-body">What does someone actually need to do? Work backward from there, not forward from a content library.</div>
+        </div>
+        <div class="phil-card">
+          <div class="phil-title">Clarity over completeness</div>
+          <div class="phil-body">A 20-page handbook nobody reads is worse than a 2-page guide people actually use. Every piece of training should make a decision about what to leave out.</div>
+        </div>
+        <div class="phil-card">
+          <div class="phil-title">Design for the hard day, not the good one</div>
+          <div class="phil-body">Training should work when someone is tired, overwhelmed, and two weeks into a new role. If it only works in ideal conditions, it doesn't really work.</div>
+        </div>
+        <div class="phil-card">
+          <div class="phil-title">Onboarding is culture-setting</div>
+          <div class="phil-body">The first 30 days aren't just about information transfer. They're the organization's first real chance to demonstrate whether it values the people who just joined it.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin-bottom:3rem;">
+
+  <div class="sect-gap">
+    <p class="sect-eyebrow">Materials & systems</p>
+    <h2 class="sect-heading">What I've built</h2>
+    <p class="body-text">Training materials, onboarding systems, and reference resources developed across HR coordination and academic support roles.</p>
+    <div class="material-grid">
+      <div class="mat-card">
+        <div class="mat-icon"><i class="ti ti-file-check" aria-hidden="true"></i></div>
+        <span class="mat-tag">Onboarding</span>
+        <div class="mat-title">Employee onboarding sequence</div>
+        <div class="mat-body">Structured onboarding workflow in BambooHR — day one through 90 days, with automated touchpoints and manager checklists.</div>
+        <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Add real details or upload artifact</div>
+      </div>
+      <div class="mat-card">
+        <div class="mat-icon"><i class="ti ti-notebook" aria-hidden="true"></i></div>
+        <span class="mat-tag">Training material</span>
+        <div class="mat-title">[Training material title]</div>
+        <div class="mat-body">[Describe this training material — what it covers, who it's for, what format it takes.]</div>
+        <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Replace with your real material</div>
+      </div>
+      <div class="mat-card">
+        <div class="mat-icon"><i class="ti ti-presentation" aria-hidden="true"></i></div>
+        <span class="mat-tag">Orientation</span>
+        <div class="mat-title">Redesigned orientation program</div>
+        <div class="mat-body">Restructured new employee or student orientation — [add details about scope, format, and what changed from the previous version].</div>
+        <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Add real details</div>
+      </div>
+      <div class="mat-card">
+        <div class="mat-icon"><i class="ti ti-map-2" aria-hidden="true"></i></div>
+        <span class="mat-tag">Resource system</span>
+        <div class="mat-title">Advising resource hub</div>
+        <div class="mat-body">Centralized resource system for academic advising — consolidated from [X] separate locations into one navigable hub used by advisors and students.</div>
+        <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Add real details</div>
+      </div>
+      <div class="mat-card">
+        <div class="mat-icon"><i class="ti ti-book" aria-hidden="true"></i></div>
+        <span class="mat-tag">Reference guide</span>
+        <div class="mat-title">[Reference guide title]</div>
+        <div class="mat-body">[Describe a job aid, quick reference guide, or how-to document you created. What was it for? Who uses it?]</div>
+        <div class="placeholder-notice"><i class="ti ti-pencil" aria-hidden="true"></i> Replace with your real work</div>
+      </div>
+      <div class="mat-card" style="border-style:dashed;background:transparent;">
+        <div class="mat-icon"><i class="ti ti-device-laptop" aria-hidden="true"></i></div>
+        <span class="mat-tag" style="background:var(--mauve-light);color:var(--mauve-dark);border-color:var(--mauve-border);">Coming soon</span>
+        <div class="mat-title">Articulate Rise modules</div>
+        <div class="mat-body">eLearning modules built in Articulate Rise — coming as OPWL 537 (Instructional Design) is completed in SP27.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin-bottom:3rem;">
+
+  <div class="sect-gap">
+    <p class="sect-eyebrow">Design principles</p>
+    <h2 class="sect-heading">How I make training decisions</h2>
+    <div class="principles-row">
+      <div class="principle">
+        <div class="pr-num">01</div>
+        <div class="pr-title">Needs before solutions</div>
+        <div class="pr-body">Training is never the first answer. First question: is this actually a training problem, or a process problem, a tool problem, or a management problem? Build what's actually needed.</div>
+      </div>
+      <div class="principle">
+        <div class="pr-num">02</div>
+        <div class="pr-title">Learner context matters</div>
+        <div class="pr-body">Who is this person? What do they already know? What conditions are they learning in? Good training design starts with the learner, not the subject matter expert.</div>
+      </div>
+      <div class="principle">
+        <div class="pr-num">03</div>
+        <div class="pr-title">Measure what matters</div>
+        <div class="pr-body">Completion rates are the floor, not the ceiling. The real question is: did this change what people do? Build evaluation in from the start.</div>
+      </div>
+      <div class="principle">
+        <div class="pr-num">04</div>
+        <div class="pr-title">Build for reuse</div>
+        <div class="pr-body">Training materials that can't be updated or reused create technical debt. Build modularly, document the logic, and design for the next person who maintains it.</div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="closing-band">
+  <h2>Instructional design work coming as the MS progresses.</h2>
+  <p>OPWL 537 and Articulate Rise are on the horizon — this section will grow significantly by SP27.</p>
+  <div class="closing-links">
+    <a href="academic.html">See academic roadmap</a>
+    <a href="contact.html">Get in touch</a>
+  </div>
+</div>
+</body>
+</html>

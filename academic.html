@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academic Work — Mikayla Miller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#F5F0E8;--cream-deep:#EDE5D4;--cream-border:#D6CCB8;--sage:#7A8C6E;--sage-light:#E4EBD8;--sage-dark:#2E3A22;--sage-mid:#AABF94;--mauve:#9E8E96;--mauve-light:#EDE4E8;--mauve-dark:#6B4A5A;--mauve-border:#C4A8B4;--forest:#2E3127;--bark:#3E3830;--stone:#6B6355;--fog:#A89E92;--white:#FDFAF6;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--bark);line-height:1.7;}
+  nav{background:var(--forest);padding:0 3rem;height:58px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+  .nav-name{font-family:'Lora',serif;font-size:16px;color:#E8E2D9;letter-spacing:0.02em;text-decoration:none;}
+  .nav-links{display:flex;gap:2rem;}
+  .nav-links a{font-size:13px;color:#8A9080;text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:#C4B5BC;}
+  .page-hero{background:var(--cream);padding:4rem 3rem 3rem;max-width:960px;margin:0 auto;}
+  .eyebrow{font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);margin-bottom:10px;}
+  .page-title{font-family:'Lora',serif;font-size:38px;font-weight:400;color:var(--forest);line-height:1.15;margin-bottom:1rem;}
+  .page-title span{color:var(--mauve);font-style:italic;}
+  .page-intro{font-size:15px;color:var(--stone);line-height:1.85;max-width:580px;font-weight:300;}
+  .rule{border:none;border-top:0.5px solid var(--cream-border);}
+  .main{max-width:960px;margin:0 auto;padding:3rem;}
+  .sect-gap{margin-bottom:3.5rem;}
+  .sect-eyebrow{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--sage);margin-bottom:8px;}
+  .sect-heading{font-family:'Lora',serif;font-size:22px;font-weight:400;color:var(--forest);margin-bottom:1rem;line-height:1.3;}
+  .body-text{font-size:14px;color:var(--stone);line-height:1.9;font-weight:300;}
+  .body-text em{color:var(--sage-dark);font-style:normal;font-weight:500;}
+
+  .progress-bar-wrap{background:var(--cream-deep);border-radius:20px;height:8px;margin:1.25rem 0;overflow:hidden;}
+  .progress-bar{background:var(--sage);height:100%;border-radius:20px;width:6%;}
+  .progress-label{font-size:12px;color:var(--fog);margin-top:4px;}
+
+  .course-group{margin-bottom:2.5rem;}
+  .group-label{font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--fog);margin-bottom:12px;padding-bottom:6px;border-bottom:0.5px solid var(--cream-border);}
+  .course-row{display:flex;gap:14px;align-items:flex-start;padding:0.9rem 0;border-bottom:0.5px solid var(--cream-border);}
+  .course-row:last-child{border-bottom:none;}
+  .cr-status{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+  .status-active{background:var(--sage);}
+  .status-upcoming{background:transparent;border:1.5px solid var(--cream-border);}
+  .status-future{background:transparent;border:1.5px dashed var(--cream-border);}
+  .cr-body{flex:1;}
+  .cr-code{font-size:11px;color:var(--fog);margin-bottom:2px;font-family:'DM Sans',sans-serif;}
+  .cr-title{font-size:13px;font-weight:500;color:var(--forest);margin-bottom:3px;}
+  .cr-desc{font-size:12px;color:var(--stone);line-height:1.55;}
+  .cr-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px;flex-shrink:0;}
+  .cr-term{font-size:11px;color:var(--fog);}
+  .cr-badge{font-size:10px;padding:2px 9px;border-radius:10px;}
+  .badge-now{background:var(--sage-light);color:var(--sage-dark);}
+  .badge-next{background:var(--mauve-light);color:var(--mauve-dark);}
+  .badge-future{background:var(--cream-deep);color:var(--stone);}
+  .badge-grad{background:var(--forest);color:#E8E2D9;}
+  .cr-credits{font-size:10px;color:var(--fog);}
+
+  .artifact-placeholder{background:var(--white);border:0.5px dashed var(--cream-border);border-radius:8px;padding:1rem 1.25rem;margin-top:8px;display:flex;gap:8px;align-items:center;}
+  .ap-icon{font-size:16px;color:var(--fog);}
+  .ap-text{font-size:12px;color:var(--fog);line-height:1.5;}
+  .ap-text strong{color:var(--stone);font-weight:500;}
+
+  .research-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:1rem;}
+  .res-card{background:var(--white);border:0.5px solid var(--cream-border);border-radius:8px;padding:1rem;}
+  .res-icon{font-size:18px;color:var(--sage);margin-bottom:6px;}
+  .res-code{font-size:10px;color:var(--fog);margin-bottom:3px;}
+  .res-title{font-size:12px;font-weight:500;color:var(--forest);margin-bottom:3px;}
+  .res-desc{font-size:11px;color:var(--stone);line-height:1.5;}
+  .res-term{font-size:10px;color:var(--mauve-dark);margin-top:6px;}
+
+  .closing-band{background:var(--forest);padding:3rem;text-align:center;margin-top:4rem;}
+  .closing-band h2{font-family:'Lora',serif;font-size:22px;font-weight:400;color:#E8E2D9;margin-bottom:0.75rem;line-height:1.4;}
+  .closing-band p{font-size:14px;color:#8A9080;font-weight:300;max-width:480px;margin:0 auto 1.75rem;line-height:1.75;}
+  .closing-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+  .closing-links a{font-size:13px;color:#C4B5BC;text-decoration:none;border:0.5px solid #4A5244;padding:9px 20px;border-radius:4px;transition:all 0.2s;}
+  .closing-links a:hover{border-color:#C4B5BC;color:#E8E2D9;}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-name">Mikayla Miller</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="daf.html">DAF work</a>
+    <a href="training.html">Training & onboarding</a>
+    <a href="academic.html" class="active">Academic work</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="eyebrow">Academic work</p>
+  <h1 class="page-title">MS in OPWL —<br><span>the long game.</span></h1>
+  <p class="page-intro">Boise State University · Organizational Performance & Workplace Learning. This page is a living record of the program — courses completed, work produced, and the roadmap to graduation.</p>
+</div>
+<hr class="rule">
+
+<main class="main">
+
+  <div class="sect-gap">
+    <p class="sect-eyebrow">Program progress</p>
+    <h2 class="sect-heading">Where I am in the MS</h2>
+    <p class="body-text">The OPWL program requires 36+ credits across core courses, research methods, electives, and a culminating portfolio. I'm completing the Portfolio Option — meaning this website is both a course deliverable and a living professional document.</p>
+    <div class="progress-bar-wrap"><div class="progress-bar"></div></div>
+    <div class="progress-label">In progress — SU25 start · FA27 graduation target · 4 credits completed</div>
+  </div>
+
+  <hr class="rule" style="margin-bottom:2.5rem;">
+
+  <div class="sect-gap">
+    <p class="sect-eyebrow">Core courses</p>
+    <h2 class="sect-heading">The foundation</h2>
+
+    <div class="course-group">
+      <div class="group-label">Core required — 24 credits</div>
+
+      <div class="course-row">
+        <div class="cr-status status-active"></div>
+        <div class="cr-body">
+          <div class="cr-code">OPWL 536</div>
+          <div class="cr-title">Organizational Performance & Workplace Learning</div>
+          <div class="cr-desc">Foundations of the OPWL field — performance improvement models, systems thinking, and the theory behind how organizations learn and change. This course is where the portfolio begins.</div>
+          <div class="artifact-placeholder">
+            <i class="ti ti-file-plus ap-icon" aria-hidden="true"></i>
+            <div class="ap-text"><strong>Portfolio artifacts will be added here</strong> as coursework is completed — practitioner's toolbox, reflections, and key deliverables.</div>
+          </div>
+        </div>
+        <div class="cr-right">
+          <span class="cr-term">SU26</span>
+          <span class="cr-badge badge-now">In progress</span>
+          <span class="cr-credits">4 credits</span>
+        </div>
+      </div>
+
+      <div class="course-row">
+        <div class="cr-status status-upcoming"></div>
+        <div class="cr-body">
+          <div class="cr-code">OPWL 535</div>
+          <div class="cr-title">Principles of Adult Learning</div>
+          <div class="cr-desc">The science of how adults learn — andragogy, learning theory, and what the research actually says about what makes training stick versus what organizations default to.</div>
+        </div>
+        <div class="cr-right">
+          <span class="cr-term">FA26</span>
+          <span class="cr-badge badge-next">Upcoming</span>
+          <span class="cr-credits">4 credits</span>
+        </div>
+      </div>
+
+      <div class="course-row">
+        <div class="cr-status status-upcoming"></div>
+        <div class="cr-body">
+          <div class="cr-code">OPWL 529</div>
+          <div class="cr-title">Needs Assessment</div>
+          <div class="cr-desc">Semester-long team project for a real client — systematic process for identifying the gap between current and desired performance before designing any intervention.</div>
+        </div>
+        <div class="cr-right">
+          <span class="cr-term">SP27</span>
+          <span class="cr-badge badge-future">Planned</span>
+          <span class="cr-credits">4 credits</span>
+        </div>
+      </div>
+
+      <div class="course-row">
+        <div class="cr-status status-upcoming"></div>
+        <div class="cr-body">
+          <div class="cr-code">OPWL 530</div>
+          <div class="cr-title">Evaluation</div>
+          <div class="cr-desc">Semester-long team project for a real client — how to measure whether interventions actually worked. Not just completion rates; real evaluation design.</div>
+        </div>
+        <div class="cr-right">
+          <span class="cr-term">FA26</span>
+          <span class="cr-badge badge-next">Upcoming</span>
+          <span class="cr-credits">4 credits</span>
+        </div>
+      </div>
+
+      <div class="course-row">
+        <div class="cr-status status-future"></div>
+        <div class="cr-body">
+          <div class="cr-code">OPWL 537</div>
+          <div class="cr-title">Instructional Design</div>
+          <div class="cr-desc">Semester-long client project — designing instruction using systematic models. This is where Articulate Rise enters the picture and the Instructional Design section of this portfolio begins to fill in.</div>
+        </div>
+        <div class="cr-right">
+          <span class="cr-term">SP27</span>
+          <span class="cr-badge badge-future">Planned</span>
+          <span class="cr-credits">4 credits</span>
+        </div>
+      </div>
+
+      <div class="course-row">
+        <div class="cr-status status-future"></div>
+        <div class="cr-body">
+          <div class="cr-code">OPWL 560</div>
+          <div class="cr-title">Workplace Performance Improvement</div>
+          <div class="cr-desc">The capstone of the core sequence — applying performance improvement models to real workplace problems. Requires OPWL 536 plus a needs assessment or evaluation course.</div>
+        </div>
+        <div class="cr-right">
+          <span class="cr-term">FA27</span>
+          <span class="cr-badge badge-future">Planned</span>
+          <span class="cr-credits">4 credits</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin-bottom:2.5rem;">
+
+  <div class="sect-gap">
+    <p class="sect-eyebrow">Research methods — 3 credits minimum</p>
+    <h2 class="sect-heading">Building the evidence toolkit</h2>
+    <div class="research-grid">
+      <div class="res-card">
+        <div class="res-icon"><i class="ti ti-chart-bar" aria-hidden="true"></i></div>
+        <div class="res-code">OPWL 506</div>
+        <div class="res-title">Survey Design & Data Analysis</div>
+        <div class="res-desc">Design surveys that actually produce useful data — sampling, question design, and analysis. Directly applicable to DAF work.</div>
+        <div class="res-term">SP26 · 1 credit</div>
+      </div>
+      <div class="res-card">
+        <div class="res-icon"><i class="ti ti-messages" aria-hidden="true"></i></div>
+        <div class="res-code">OPWL 507</div>
+        <div class="res-title">Interviews & Data Analysis</div>
+        <div class="res-desc">Qualitative methods — conducting interviews that surface real information, not what people think you want to hear.</div>
+        <div class="res-term">FA26 · 1 credit</div>
+      </div>
+      <div class="res-card">
+        <div class="res-icon"><i class="ti ti-chart-dots" aria-hidden="true"></i></div>
+        <div class="res-code">OPWL 508</div>
+        <div class="res-title">Data Visualization</div>
+        <div class="res-desc">Presenting data in ways that support decisions — not just accuracy, but communication design. Directly connects to dashboard work at DAF.</div>
+        <div class="res-term">FA26 · 1 credit</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin-bottom:2.5rem;">
+
+  <div class="sect-gap">
+    <p class="sect-eyebrow">Culminating activity</p>
+    <h2 class="sect-heading">The portfolio option</h2>
+    <p class="body-text">Rather than a thesis, I'm completing the Portfolio Option — building a comprehensive professional portfolio that demonstrates competency across the OPWL program. <em>This website is that portfolio.</em> What starts as a shell in OPWL 536 becomes a full professional document by FA27 graduation.</p>
+    <div class="course-group" style="margin-top:1.25rem;">
+      <div class="course-row">
+        <div class="cr-status status-future"></div>
+        <div class="cr-body">
+          <div class="cr-code">OPWL 592</div>
+          <div class="cr-title">Portfolio — graduation term</div>
+          <div class="cr-desc">The final course. Application for Admission to Candidacy must be submitted and approved. Everything in this portfolio comes together here — projects, coursework, reflections, and professional artifacts across all OPWL competency areas.</div>
+        </div>
+        <div class="cr-right">
+          <span class="cr-term">FA27</span>
+          <span class="cr-badge badge-grad">Graduation</span>
+          <span class="cr-credits">1 credit</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="closing-band">
+  <h2>This page grows every semester.</h2>
+  <p>Course artifacts, reflections, and project work are added as each course is completed. Check back as the program progresses.</p>
+  <div class="closing-links">
+    <a href="projects.html">See project work</a>
+    <a href="contact.html">Get in touch</a>
+  </div>
+</div>
+</body>
+</html>

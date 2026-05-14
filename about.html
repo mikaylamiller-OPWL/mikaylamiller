@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Mikayla Miller</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream:         #F5F0E8;
+    --cream-deep:    #EDE5D4;
+    --cream-border:  #D6CCB8;
+    --sage:          #7A8C6E;
+    --sage-light:    #E4EBD8;
+    --sage-dark:     #2E3A22;
+    --sage-mid:      #AABF94;
+    --mauve:         #9E8E96;
+    --mauve-light:   #EDE4E8;
+    --mauve-dark:    #6B4A5A;
+    --mauve-border:  #C4A8B4;
+    --forest:        #2E3127;
+    --bark:          #3E3830;
+    --stone:         #6B6355;
+    --fog:           #A89E92;
+    --white:         #FDFAF6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--bark); line-height: 1.7; }
+
+  nav {
+    background: var(--forest);
+    padding: 0 3rem;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-name { font-family: 'Lora', serif; font-size: 16px; color: #E8E2D9; letter-spacing: 0.02em; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; }
+  .nav-links a { font-size: 13px; color: #8A9080; text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: #C4B5BC; }
+  .nav-links a.active { color: #C4B5BC; }
+
+  .page-hero {
+    background: var(--cream);
+    padding: 4rem 3rem 3rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .page-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 10px;
+  }
+  .page-title {
+    font-family: 'Lora', serif;
+    font-size: 38px;
+    font-weight: 400;
+    color: var(--forest);
+    line-height: 1.15;
+    margin-bottom: 1rem;
+  }
+  .page-title span { color: var(--mauve); font-style: italic; }
+  .page-intro {
+    font-size: 15px;
+    color: var(--stone);
+    line-height: 1.85;
+    max-width: 600px;
+    font-weight: 300;
+  }
+
+  .rule { border: none; border-top: 0.5px solid var(--cream-border); }
+
+  .main { max-width: 960px; margin: 0 auto; padding: 3rem; }
+
+  .two-col { display: grid; grid-template-columns: 3fr 2fr; gap: 3rem; align-items: start; }
+  .two-col-even { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+
+  .sect-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 8px;
+  }
+  .sect-heading {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--forest);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+  .body-text {
+    font-size: 14px;
+    color: var(--stone);
+    line-height: 1.9;
+    font-weight: 300;
+  }
+  .body-text em { color: var(--sage-dark); font-style: normal; font-weight: 500; }
+  .body-text + .body-text { margin-top: 1rem; }
+
+  .pull-quote {
+    border-left: 2px solid var(--mauve-border);
+    padding: 1rem 1.25rem;
+    background: var(--mauve-light);
+    border-radius: 0 6px 6px 0;
+    margin: 1.5rem 0;
+  }
+  .pull-quote p {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--mauve-dark);
+    line-height: 1.8;
+  }
+
+  .value-cards { display: flex; flex-direction: column; gap: 10px; }
+  .value-card {
+    background: var(--white);
+    border: 0.5px solid var(--cream-border);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .vc-icon { font-size: 18px; color: var(--sage); flex-shrink: 0; margin-top: 1px; }
+  .vc-title { font-size: 13px; font-weight: 500; color: var(--forest); margin-bottom: 3px; }
+  .vc-body { font-size: 12px; color: var(--stone); line-height: 1.6; }
+
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .tl-item { display: flex; gap: 16px; }
+  .tl-spine { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
+  .tl-dot {
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    border: 1.5px solid var(--cream-border);
+    background: var(--white);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .tl-dot.filled { background: var(--mauve-border); border-color: var(--mauve-border); }
+  .tl-dot.current { background: var(--sage); border-color: var(--sage); }
+  .tl-line { width: 1px; flex: 1; background: var(--cream-border); min-height: 28px; }
+  .tl-content { padding-bottom: 1.5rem; }
+  .tl-period { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--fog); margin-bottom: 3px; }
+  .tl-role { font-size: 13px; font-weight: 500; color: var(--forest); margin-bottom: 2px; }
+  .tl-org { font-size: 12px; color: var(--mauve-dark); margin-bottom: 4px; }
+  .tl-desc { font-size: 12px; color: var(--stone); line-height: 1.65; }
+  .tl-badge {
+    display: inline-block; font-size: 10px;
+    padding: 2px 8px; border-radius: 10px; margin-left: 6px;
+    vertical-align: middle;
+  }
+  .badge-sage { background: var(--sage-light); color: var(--sage-dark); }
+  .badge-mauve { background: var(--mauve-light); color: var(--mauve-dark); }
+
+  .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 1rem; }
+  .skill-group {
+    background: var(--white);
+    border: 0.5px solid var(--cream-border);
+    border-radius: 8px;
+    padding: 1rem 1.1rem;
+  }
+  .sg-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--sage); margin-bottom: 8px; }
+  .sg-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+  .sg-pill {
+    font-size: 11px; padding: 3px 9px;
+    border-radius: 20px;
+    background: var(--sage-light);
+    color: var(--sage-dark);
+    border: 0.5px solid var(--sage-mid);
+  }
+  .sg-pill-mauve {
+    background: var(--mauve-light);
+    color: var(--mauve-dark);
+    border: 0.5px solid var(--mauve-border);
+  }
+  .sg-pill-cream {
+    background: var(--cream-deep);
+    color: #5A4A36;
+    border: 0.5px solid var(--cream-border);
+  }
+
+  .outside-strip {
+    background: var(--sage-light);
+    border: 0.5px solid var(--sage-mid);
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+    margin-top: 2rem;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .os-icon { font-size: 22px; color: var(--sage); flex-shrink: 0; margin-top: 2px; }
+  .os-title { font-size: 13px; font-weight: 500; color: var(--sage-dark); margin-bottom: 4px; }
+  .os-body { font-size: 13px; color: #4A5E3A; line-height: 1.75; font-weight: 300; }
+
+  .closing-band {
+    background: var(--forest);
+    padding: 3rem;
+    text-align: center;
+    margin-top: 4rem;
+  }
+  .closing-band h2 {
+    font-family: 'Lora', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: #E8E2D9;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+  .closing-band p {
+    font-size: 14px; color: #8A9080; font-weight: 300;
+    max-width: 480px; margin: 0 auto 1.75rem; line-height: 1.75;
+  }
+  .closing-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .closing-links a {
+    font-size: 13px; color: #C4B5BC; text-decoration: none;
+    border: 0.5px solid #4A5244; padding: 9px 20px; border-radius: 4px;
+    transition: all 0.2s;
+  }
+  .closing-links a:hover { border-color: #C4B5BC; color: #E8E2D9; }
+
+  .sect-gap { margin-bottom: 3.5rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-name">Mikayla Miller</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="daf.html">DAF work</a>
+    <a href="training.html">Training & onboarding</a>
+    <a href="academic.html">Academic work</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="page-eyebrow">About me</p>
+  <h1 class="page-title">The person behind<br>the <span>systems</span></h1>
+  <p class="page-intro">HR operations professional, graduate student, and someone who genuinely believes that well-designed systems are one of the most humane things you can build for another person.</p>
+</div>
+
+<hr class="rule">
+
+<main class="main">
+
+  <div class="sect-gap">
+    <div class="two-col">
+      <div>
+        <p class="sect-eyebrow">My story</p>
+        <h2 class="sect-heading">I didn't set out to fix broken systems. I just kept finding them.</h2>
+        <p class="body-text">My career started in counseling administration — a field that teaches you, faster than almost any other, that <em>people's struggles are rarely about the people.</em> They're about the systems around them. The unclear processes. The missing documentation. The onboarding that assumed everyone already knew how things worked.</p>
+        <p class="body-text">From there I moved into HR coordination, where I built onboarding workflows, managed BambooHR systems, and coordinated hiring processes. What I found was the same pattern: organizations full of capable, motivated people being held back by systems that were confusing, inconsistent, or just never built in the first place.</p>
+        <p class="body-text">Now I work in data operations — and yes, the same instinct applies. <em>Data pipelines break for the same reasons employee onboarding breaks:</em> no one documented the process, no one designed it for the humans who'd actually use it, and no one built in a way to catch the failures.</p>
+        <div class="pull-quote">
+          <p>"I'm not here to optimize for efficiency metrics. I'm here to make sure the person starting their first week, or running their hundredth workflow, actually has what they need to succeed."</p>
+        </div>
+        <p class="body-text">I'm pursuing my MS in Organizational Performance & Workplace Learning at Boise State because I want to do this work with more rigor, more depth, and more intentionality. The degree is the formalization of what I've already been practicing.</p>
+      </div>
+      <div class="value-cards">
+        <div class="value-card">
+          <i class="ti ti-settings-2 vc-icon" aria-hidden="true"></i>
+          <div>
+            <div class="vc-title">Systems over symptoms</div>
+            <div class="vc-body">When something keeps going wrong, I look for the structural cause — not the person to blame. Sustainable fixes come from redesigning the system, not retraining the individual.</div>
+          </div>
+        </div>
+        <div class="value-card">
+          <i class="ti ti-users vc-icon" aria-hidden="true"></i>
+          <div>
+            <div class="vc-title">People-centered design</div>
+            <div class="vc-body">Every workflow, training, or process I build is designed for the actual human using it — not the ideal user in a planning document.</div>
+          </div>
+        </div>
+        <div class="value-card">
+          <i class="ti ti-list-check vc-icon" aria-hidden="true"></i>
+          <div>
+            <div class="vc-title">Operational clarity</div>
+            <div class="vc-body">I document things. I create SOPs that outlast the person who wrote them. I build processes that don't require institutional memory to execute.</div>
+          </div>
+        </div>
+        <div class="value-card">
+          <i class="ti ti-chart-bar vc-icon" aria-hidden="true"></i>
+          <div>
+            <div class="vc-title">Evidence over assumption</div>
+            <div class="vc-body">Whether it's a needs assessment, a data pipeline, or an onboarding audit — I want to know what's actually happening, not what we think is happening.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin-bottom:3.5rem;">
+
+  <div class="sect-gap">
+    <p class="sect-eyebrow">Where I've been</p>
+    <h2 class="sect-heading">Experience that built the instinct</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-spine"><div class="tl-dot current"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-period">Current · transitioning soon</div>
+          <div class="tl-role">HR Assistant <span class="tl-badge badge-sage">Now</span> <span class="tl-badge badge-mauve">→ Generalist</span></div>
+          <div class="tl-org">DAF — Data Airflow</div>
+          <div class="tl-desc">Supporting HR operations across a data-driven organization — onboarding, documentation, and people operations. Currently expanding into an HR Generalist role, broadening scope across the full employee lifecycle, compliance, and organizational development.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-spine"><div class="tl-dot filled"></div><div class="tl-line"></div></div>
+        <div class="tl-content">
+          <div class="tl-period">Previous</div>
+          <div class="tl-role">HR & Bookkeeping Assistant</div>
+          <div class="tl-org">Farwest</div>
+          <div class="tl-desc">Supported HR coordination and financial operations — managing records, assisting with hiring processes, and keeping the operational infrastructure running. Where I learned that good HR work and good financial work have the same core requirement: nothing falls through the cracks.</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-spine"><div class="tl-dot filled"></div></div>
+        <div class="tl-content">
+          <div class="tl-period">Foundation</div>
+          <div class="tl-role">Counseling Department</div>
+          <div class="tl-org">Idaho State University</div>
+          <div class="tl-desc">Where it started. Working inside a counseling department taught me faster than almost anything else that people's struggles are rarely about the people — they're about the systems, structures, and support (or lack of it) around them. That understanding has shaped everything I've built since.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="rule" style="margin-bottom:3.5rem;">
+
+  <div class="sect-gap">
+    <p class="sect-eyebrow">What I work with</p>
+    <h2 class="sect-heading">Skills & tools</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="sg-label">HR & operations</div>
+        <div class="sg-pills">
+          <span class="sg-pill">BambooHR</span>
+          <span class="sg-pill">Onboarding design</span>
+          <span class="sg-pill">HRIS systems</span>
+          <span class="sg-pill">Interview coordination</span>
+          <span class="sg-pill">SOP development</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-label">Training & learning</div>
+        <div class="sg-pills">
+          <span class="sg-pill-mauve sg-pill">Training materials</span>
+          <span class="sg-pill-mauve sg-pill">Needs assessment</span>
+          <span class="sg-pill-mauve sg-pill">Instructional design</span>
+          <span class="sg-pill-mauve sg-pill">Adult learning</span>
+          <span class="sg-pill-mauve sg-pill">Articulate Rise*</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-label">Data & systems</div>
+        <div class="sg-pills">
+          <span class="sg-pill">Data pipelines</span>
+          <span class="sg-pill">Dashboard design</span>
+          <span class="sg-pill">Workflow documentation</span>
+          <span class="sg-pill">Process mapping</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="sg-label">Communication & strategy</div>
+        <div class="sg-pills">
+          <span class="sg-pill-cream sg-pill">Technical writing</span>
+          <span class="sg-pill-cream sg-pill">Stakeholder communication</span>
+          <span class="sg-pill-cream sg-pill">Change management</span>
+          <span class="sg-pill-cream sg-pill">Program coordination</span>
+        </div>
+      </div>
+    </div>
+    <p style="font-size:11px; color:var(--fog); margin-top:10px;">* Currently building expertise through MS coursework</p>
+  </div>
+
+  <div class="outside-strip">
+    <i class="ti ti-mountain os-icon" aria-hidden="true"></i>
+    <div>
+      <div class="os-title">Outside the office</div>
+      <div class="os-body">Based in Boise, Idaho — which means the mountains are never far. When I'm not building systems that make organizations function better, I'm usually somewhere outside, which turns out to be good for the same reason: both require you to pay attention to your environment, plan ahead, and stay calm when things don't go as expected.</div>
+    </div>
+  </div>
+
+</main>
+
+<div class="closing-band">
+  <h2>Want to know more or work together?</h2>
+  <p>I'm always open to conversations about organizational performance, HR systems, training design, or the MS in OPWL.</p>
+  <div class="closing-links">
+    <a href="projects.html">See my projects</a>
+    <a href="contact.html">Get in touch</a>
+    <a href="resume.html">View my resume</a>
+  </div>
+</div>
+
+</body>
+</html>
